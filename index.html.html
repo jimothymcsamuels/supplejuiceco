@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.75">
+  <title>Supple Juice</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: #fffdf6;
+      color: #3a2618;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: linear-gradient(to right, #f7c948, #fbe577);
+      padding: 25px;
+      text-align: center;
+      border-bottom: 4px dotted #f57224;
+    }
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+      color: #d35400;
+    }
+    header p {
+      font-size: 1.4em;
+      margin: 10px 0;
+      color: #a0522d;
+    }
+    .socials a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #d35400;
+      font-weight: bold;
+    }
+    .socials img {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 25px;
+    }
+    .card {
+      background: #fff0dc;
+      border: 2px dashed #fbb13c;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 8px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+    .card img {
+      width: 90%;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+    .order-btn {
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #f57224;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    .order-form {
+      display: none;
+      position: fixed;
+      top: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fffaf2;
+      border: 3px solid #fbb13c;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      z-index: 10;
+      max-height: 90vh;
+      overflow-y: auto;
+      width: 90%;
+      max-width: 500px;
+    }
+    .order-form form label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .order-form input,
+    .order-form textarea,
+    .order-form select {
+      width: 100%;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-family: 'Comic Sans MS', cursive;
+      margin-top: 5px;
+    }
+    .order-form button[type="submit"] {
+      margin-top: 15px;
+      padding: 12px 20px;
+      background-color: #ff8c69;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1em;
+      cursor: pointer;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+    }
+    .order-form button[type="submit"]:hover {
+      background-color: #ff6f4d;
+    }
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      z-index: 5;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2em;
+      }
+      header p {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🍹 Supple Juice 🍹</h1>
+    <p>🍊🍓 Squeeze the Day with Supple Juice! 🍍🍇</p>
+    <div class="socials">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram Logo"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook Logo"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Logo"></a>
+    </div>
+  </header>
+
+  <section class="products">
+  <div class="card">
+    <img src="4bottle.png" alt="4 Bottles">
+    <h3>4 Bottles – One Flavor 🧃</h3>
+    <p>Four bottles of your favorite flavor—perfect for quick refreshment!</p>
+    <p>💲24</p>
+    <button class="order-btn" data-item="4 Bottles – One Flavor">🛒 Order Now</button>
+  </div>
+  <div class="card">
+    <img src="6bottle.png" alt="6 Bottles">
+    <h3>6 Bottles – One Flavor 🧃</h3>
+    <p>Stock up on a single juicy favorite with six satisfying bottles of vibrant flavor.</p>
+    <p>💲36</p>
+    <button class="order-btn" data-item="6 Bottles – One Flavor">🛒 Order Now</button>
+  </div>
+  <div class="card">
+    <img src="12bottle.png" alt="12 Bottles">
+    <h3>12 Bottles – Two Flavors 🍹🍹</h3>
+    <p>Double the flavor fun with this vibrant dozen—choose two unique blends to mix it up!</p>
+    <p>💲68</p>
+    <button class="order-btn" data-item="12 Bottles – Two Flavors">🛒 Order Now</button>
+  </div>
+  <div class="card">
+    <img src="halfgallon.png" alt="1/2 Gallon">
+    <h3>1/2 Gallon Glass Jar 🧴</h3>
+    <p>Perfect for the daily sipper—eco-friendly, reusable, and ideal for your fridge shelf!</p>
+    <p>💲28</p>
+    <small>♻️ Reusable, discount on repeat orders 💚</small><br>
+    <button class="order-btn" data-item="1/2 Gallon Glass Jar">🛒 Order Now</button>
+  </div>
+  <div class="card">
+    <img src="fullgallon.png" alt="1 Gallon">
+    <h3>1 Gallon Glass Jar 🧴</h3>
+    <p>For families and serious juice lovers—maximum freshness, minimum waste!</p>
+    <p>💲45</p>
+    <small>♻️ Reusable, discount on repeat orders 💚</small><br>
+    <button class="order-btn" data-item="1 Gallon Glass Jar">🛒 Order Now</button>
+  </div>
+</section>
+
+  <div class="overlay"></div>
+
+  <div class="order-form" id="orderForm">
+    <h2>Order Form 🧾</h2>
+    <form action="https://formspree.io/f/xanjqvdp" method="POST">
+  <label>🧃 Item:<br><input type="text" id="itemInput" name="item" readonly></label>
+  <label>👤 Name:<br><input type="text" name="name" required></label>
+  <label>📞 Phone Number:<br><input type="tel" name="phone" required></label>
+  <label>📧 Email:<br><input type="email" name="email" required></label>
+  <label>📦 Address:<br><textarea name="address" required></textarea></label>
+  <div id="flavorSelects"></div>
+  <p>💸 Pay via Venmo: <strong>@SuppleJuice</strong></p>
+  <p>💸 Pay via Zelle: <strong>juice@supple.com</strong></p>
+  <button type="submit">🍊 Place My Yummy Order!</button>
+</form>
+  </div>
+
+  <script>
+    const flavors = [
+      "Sunshine Citrus",
+      "Berry Bliss",
+      "Tropical Tango",
+      "Minty Melon",
+      "Zesty Ginger Pear",
+      "Golden Pineapple Glow",
+      "Lush Lavender Lemon",
+      "Supple Supergreens"
+    ];
+
+    function createFlavorDropdown(name) {
+      const label = document.createElement('label');
+      label.innerHTML = name + ' 🍓:<br>';
+      const select = document.createElement('select');
+      flavors.forEach(f => {
+        const opt = document.createElement('option');
+        opt.value = f;
+        opt.innerText = f;
+        select.appendChild(opt);
+      });
+      label.appendChild(select);
+      return label;
+    }
+
+    const orderButtons = document.querySelectorAll('.order-btn');
+    const orderForm = document.getElementById('orderForm');
+    const overlay = document.querySelector('.overlay');
+    const itemInput = document.getElementById('itemInput');
+    const flavorSelects = document.getElementById('flavorSelects');
+
+    orderButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.dataset.item;
+        itemInput.value = item;
+        flavorSelects.innerHTML = '';
+
+        if (item.includes('One Flavor')) {
+          flavorSelects.appendChild(createFlavorDropdown('Flavor'));
+        } else if (item.includes('Two Flavors')) {
+          flavorSelects.appendChild(createFlavorDropdown('Flavor 1'));
+          flavorSelects.appendChild(document.createElement('br'));
+          flavorSelects.appendChild(createFlavorDropdown('Flavor 2'));
+        }
+
+        orderForm.style.display = 'block';
+        overlay.style.display = 'block';
+      });
+    });
+
+    overlay.addEventListener('click', () => {
+      orderForm.style.display = 'none';
+      overlay.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
