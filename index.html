@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=0.75">
   <title>Supple Juice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Comic Sans MS', cursive, sans-serif;
+      font-family: 'Patrick Hand', cursive;
       background: #fffdf6;
       color: #3a2618;
       margin: 0;
@@ -76,19 +79,22 @@
     .order-form {
       display: none;
       position: fixed;
-      top: 5%;
-      left: 50%;
-      transform: translateX(-50%);
+      top: 0;
+      left: 0;
+      transform: translateY(5%);
       background: #fffaf2;
       border: 3px solid #fbb13c;
       padding: 25px;
       border-radius: 15px;
       box-shadow: 0 8px 16px rgba(0,0,0,0.3);
       z-index: 10;
+      width: 100%;
+      max-width: 500px;
       max-height: 90vh;
       overflow-y: auto;
-      width: 90%;
-      max-width: 500px;
+      margin: auto;
+      right: 0;
+      left: 0;
     }
     .order-form form label {
       display: block;
@@ -101,7 +107,7 @@
       padding: 8px;
       border-radius: 8px;
       border: 1px solid #ccc;
-      font-family: 'Comic Sans MS', cursive;
+      font-family: 'Patrick Hand', cursive;
       margin-top: 5px;
     }
     .order-form button[type="submit"] {
@@ -136,12 +142,19 @@
       header p {
         font-size: 1em;
       }
+      .order-form {
+        padding: 20px;
+        top: 2%;
+        transform: none;
+        height: auto;
+        max-height: 95vh;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>🍹 Supple Juice 🍹</h1>
+    <h1>🍹 Supple Juice Co.🍹</h1>
     <p>🍊🍓 Squeeze the Day with Supple Juice! 🍍🍇</p>
     <div class="socials">
       <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram Logo"></a>
@@ -151,60 +164,60 @@
   </header>
 
   <section class="products">
-  <div class="card">
-    <img src="4bottle.png" alt="4 Bottles">
-    <h3>4 Bottles – One Flavor 🧃</h3>
-    <p>Four bottles of your favorite flavor—perfect for quick refreshment!</p>
-    <p>💲24</p>
-    <button class="order-btn" data-item="4 Bottles – One Flavor">🛒 Order Now</button>
-  </div>
-  <div class="card">
-    <img src="6bottle.png" alt="6 Bottles">
-    <h3>6 Bottles – One Flavor 🧃</h3>
-    <p>Stock up on a single juicy favorite with six satisfying bottles of vibrant flavor.</p>
-    <p>💲36</p>
-    <button class="order-btn" data-item="6 Bottles – One Flavor">🛒 Order Now</button>
-  </div>
-  <div class="card">
-    <img src="12bottle.png" alt="12 Bottles">
-    <h3>12 Bottles – Two Flavors 🍹🍹</h3>
-    <p>Double the flavor fun with this vibrant dozen—choose two unique blends to mix it up!</p>
-    <p>💲68</p>
-    <button class="order-btn" data-item="12 Bottles – Two Flavors">🛒 Order Now</button>
-  </div>
-  <div class="card">
-    <img src="halfgallon.png" alt="1/2 Gallon">
-    <h3>1/2 Gallon Glass Jar 🧴</h3>
-    <p>Perfect for the daily sipper—eco-friendly, reusable, and ideal for your fridge shelf!</p>
-    <p>💲28</p>
-    <small>♻️ Reusable, discount on repeat orders 💚</small><br>
-    <button class="order-btn" data-item="1/2 Gallon Glass Jar">🛒 Order Now</button>
-  </div>
-  <div class="card">
-    <img src="fullgallon.png" alt="1 Gallon">
-    <h3>1 Gallon Glass Jar 🧴</h3>
-    <p>For families and serious juice lovers—maximum freshness, minimum waste!</p>
-    <p>💲45</p>
-    <small>♻️ Reusable, discount on repeat orders 💚</small><br>
-    <button class="order-btn" data-item="1 Gallon Glass Jar">🛒 Order Now</button>
-  </div>
-</section>
+    <div class="card">
+      <img src="4bottle.png" alt="4 Bottles">
+      <h3>4 Bottles – One Flavor 🧃</h3>
+      <p>Four bottles of your favorite flavor—perfect for quick refreshment!</p>
+      <p>💲24</p>
+      <button class="order-btn" data-item="4 Bottles – One Flavor">🛒 Order Now</button>
+    </div>
+    <div class="card">
+      <img src="6bottle.png" alt="6 Bottles">
+      <h3>6 Bottles – One Flavor 🧃</h3>
+      <p>Stock up on a single juicy favorite with six satisfying bottles of vibrant flavor.</p>
+      <p>💲36</p>
+      <button class="order-btn" data-item="6 Bottles – One Flavor">🛒 Order Now</button>
+    </div>
+    <div class="card">
+      <img src="12bottle.png" alt="12 Bottles">
+      <h3>12 Bottles – Two Flavors 🍹🍹</h3>
+      <p>Double the flavor fun with this vibrant dozen—choose two unique blends to mix it up!</p>
+      <p>💲68</p>
+      <button class="order-btn" data-item="12 Bottles – Two Flavors">🛒 Order Now</button>
+    </div>
+    <div class="card">
+      <img src="halfgallon.png" alt="1/2 Gallon">
+      <h3>1/2 Gallon Glass Jar 🧴</h3>
+      <p>Perfect for the daily sipper—eco-friendly, reusable, and ideal for your fridge shelf!</p>
+      <p>💲28</p>
+      <small>♻️ Reusable, discount on repeat orders 💚</small><br>
+      <button class="order-btn" data-item="1/2 Gallon Glass Jar">🛒 Order Now</button>
+    </div>
+    <div class="card">
+      <img src="fullgallon.png" alt="1 Gallon">
+      <h3>1 Gallon Glass Jar 🧴</h3>
+      <p>For families and serious juice lovers—maximum freshness, minimum waste!</p>
+      <p>💲45</p>
+      <small>♻️ Reusable, discount on repeat orders 💚</small><br>
+      <button class="order-btn" data-item="1 Gallon Glass Jar">🛒 Order Now</button>
+    </div>
+  </section>
 
   <div class="overlay"></div>
 
   <div class="order-form" id="orderForm">
     <h2>Order Form 🧾</h2>
     <form action="https://formspree.io/f/xanjqvdp" method="POST">
-  <label>🧃 Item:<br><input type="text" id="itemInput" name="item" readonly></label>
-  <label>👤 Name:<br><input type="text" name="name" required></label>
-  <label>📞 Phone Number:<br><input type="tel" name="phone" required></label>
-  <label>📧 Email:<br><input type="email" name="email" required></label>
-  <label>📦 Address:<br><textarea name="address" required></textarea></label>
-  <div id="flavorSelects"></div>
-  <p>💸 Pay via Venmo: <strong>@SuppleJuice</strong></p>
-  <p>💸 Pay via Zelle: <strong>juice@supple.com</strong></p>
-  <button type="submit">🍊 Place My Yummy Order!</button>
-</form>
+      <label>🧃 Item:<br><input type="text" id="itemInput" name="item" readonly></label>
+      <label>👤 Name:<br><input type="text" name="name" required></label>
+      <label>📞 Phone Number:<br><input type="tel" name="phone" required></label>
+      <label>📧 Email:<br><input type="email" name="email" required></label>
+      <label>📦 Address:<br><textarea name="address" required></textarea></label>
+      <div id="flavorSelects"></div>
+      <p>💸 Pay via Venmo: <strong>@SuppleJuice</strong></p>
+      <p>💸 Pay via Zelle: <strong>juice@supplejuice.co</strong></p>
+      <button type="submit">🍊 Place My Yummy Order!</button>
+    </form>
   </div>
 
   <script>
